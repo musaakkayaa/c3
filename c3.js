@@ -7132,7 +7132,7 @@
                     });
                 tspan.enter().append('tspan');
                 tspan.exit().remove();
-                tspan.text(function (d) { return d.splitted; });
+                tspan.text(function (d) { var n = parseFloat(d.splitted); return (d.splitted % 1 === 0) ? d.splitted : n.toFixed(2) });
 
                 var rotate = params.tickTextRotate;
 
